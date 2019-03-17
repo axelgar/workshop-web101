@@ -19,15 +19,6 @@ ul, li {
   list-style: none;
 }
 
-/* ---- typography ---- */
-
-body {
-  color: rgb(22, 21, 21);
-  font-family: 'Monda', sans-serif;
-  font-size: 16px;
-  line-height: 147%;
-}
-
 p {
   margin: 0;
 }
@@ -37,6 +28,14 @@ a {
   color: rgb(22, 21, 21); 
 }
 
+/* ---- typography ---- */
+
+body {
+  color: rgb(22, 21, 21);
+  font-family: 'Monda', sans-serif;
+  font-size: 16px;
+  line-height: 147%;
+}
 
 /* ---- layout ---- */
 
@@ -48,38 +47,13 @@ a {
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
 }
 
+#site-footer {
+  margin: 50px;
+  color: #ccc;
+  background-color: black
+}
+
 /* ---- components ---- */
-
-.snap-parent-container {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-}
-
-.sanp-child-container {
-  height: 100vh;
-  scroll-snap-align: start;
-}
-
-/* ---- section ---- */
-ul {
- display: flex;
- justify-content: space-evenly;
- margin: 20px 0px;
-}
-
-li {
-  border-bottom: 2px solid white;
-}
-
-li:hover {
-  border-bottom: 2px solid black;
-  transition: all ease 1s;
-}
-
-section {
-  display: flex;
-}
 
 .card {
   margin: auto;
@@ -90,14 +64,30 @@ section {
 }
 
 .card-images {
-  margin: auto;
-  width: 70%;
-  height: auto;
-  background-color: #fff;
-  box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+/* ---- section ---- */
+#site-header ul {
+ display: flex;
+ justify-content: space-evenly;
+ margin: 20px 0px;
+}
+
+#site-header li {
+  border-bottom: 2px solid white;
+}
+
+#site-header li:hover {
+  border-bottom: 2px solid black;
+  transition: all ease 1s;
+}
+
+section {
+  display: flex;
+  height: 100vh;
 }
 
 .card h1,h2,p {
@@ -110,7 +100,7 @@ section {
   color: #ccc;
 }
 
-.image-workshop {
+.image-container {
   max-height: 300px;
   overflow: hidden;
 }
@@ -121,17 +111,55 @@ img {
 }
 
 .card-images div {
-  width: 45%;
-  margin: auto;
+  width: 90%;
+  margin: 20px auto;
   position: relative;
-  max-height: 200px;
+  max-height: 100px;
+  box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
 }
 
-.card-images p {
-  width: 45%;
-  margin: auto;
-  position: absolute;
-  color: white;
-  top: 50%;
-  left: 10px;
+.card-images div:hover {
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+#about p{
+  padding-bottom: 50px;
+  text-align: justify;
+  margin-right: 20px;
+}
+
+@media(min-width: 768px) {
+  img {
+    width: 155%;
+  }
+
+  .card-images div {
+    width: 45%;
+    max-height: 200px;
+  }
+
+  .card-images div:hover {
+    width: 50%;
+    max-height: 200px;
+  }
+
+  #about p{
+    padding-bottom: 50px;
+    width: 45%;
+    text-align: justify;
+  }
+
+  #about .card p:nth-child(3){
+    margin-left: auto;
+  }
+}
+
+.privacy {
+  float: left;
+}
+
+.media {
+  float: right;
 }
