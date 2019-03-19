@@ -13,6 +13,10 @@ body {
   padding: 0;
 }
 
+h1 {
+  margin-bottom: 0;
+}
+
 ul, li {
   padding: 0;
   margin: 0;
@@ -42,15 +46,19 @@ body {
 #site-header {
   position: fixed;
   top: 0px;
+  z-index: 10;
   width: 100%;
   background-color: white;
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
 }
 
 #site-footer {
-  margin: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 50px;
+  align-items: center;
   color: #ccc;
-  background-color: black
+  background-color: rgb(22, 21, 21);
 }
 
 /* ---- components ---- */
@@ -58,13 +66,14 @@ body {
 .card {
   margin: auto;
   width: 70%;
-  height: 70vh;
+  min-height: 70vh;
   background-color: #fff;
   box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.2);
 }
 
 .card-images {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
@@ -87,12 +96,11 @@ body {
 
 section {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-.card h1,h2,p {
-  margin-left: 10px;
-  padding-bottom: 5px;
+.card h1,h2,h3,p {
+  padding: 0 20px 5px;
 }
 
 .card .date {
@@ -124,14 +132,17 @@ img {
   transition: all 0.5s ease;
 }
 
-#about p{
+#about {
+  margin-bottom: 20px;
+}
+
+#about div {
   padding-bottom: 50px;
   text-align: justify;
-  margin-right: 20px;
 }
 
 @media(min-width: 768px) {
-  img {
+  .project-image {
     width: 155%;
   }
 
@@ -145,21 +156,34 @@ img {
     max-height: 200px;
   }
 
-  #about p{
+  #about {
+    margin-bottom: auto;
+  }
+
+  #about div{
     padding-bottom: 50px;
     width: 45%;
     text-align: justify;
   }
 
-  #about .card p:nth-child(3){
+  #about .card div:nth-child(3){
     margin-left: auto;
   }
 }
 
-.privacy {
-  float: left;
+#site-footer li {
+  margin-bottom: 5px;
 }
 
-.media {
-  float: right;
+#site-footer ul li:last-child {
+  margin-bottom: 0;
 }
+
+.privacy {
+  /* float: left; */
+  margin-right: 10px;
+}
+
+/* .media {
+  float: right;
+} */
